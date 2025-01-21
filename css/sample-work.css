@@ -94,7 +94,7 @@ h1 {
 .nav-link a {
     color: rgb(10, 85, 35);
     text-decoration: none;
-    font-family: 'MarkerFelt', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 1.3rem;
     font-weight: 200;
     font-stretch: ultra-condensed;
@@ -233,6 +233,7 @@ li.arlo-link {
     justify-content: flex-start;
     gap: 1rem;
     margin-top: 5vh;
+    padding-bottom: 5vh;
 }
 
 iframe {
