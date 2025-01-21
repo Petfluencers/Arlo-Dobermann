@@ -10,7 +10,7 @@
     .background-container {
         width: 100vw;
         height: 100vh;
-        background-image: url(/images/arlo-dobermann-cover.webp);
+        background-image: url(../images/arlo-dobermann-cover.webp);
         background-size: 200%;
         background-position: calc(50% - 20px) 30%;
         background-attachment: fixed;
@@ -23,17 +23,49 @@
         align-content: center;
         padding-top: 40vh;
     }
+     
+        .hamburger#hamburger {
+            display: block;  /* Show on mobile screens */
+        }
+    
+        #nav-list {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+        }
+    
+        #nav-list.active {
+            display: flex;
+        }
+    
+        .nav-link li {
+            text-align: center;
+            padding: 1rem 0;
+            border: 1px solid #fff;
+        }
 
-    .nav-list {
-        justify-content: space-between;
-        padding-inline-start: none;
-        padding-inline-end: 4vw;
-    }
-
-    .nav-link a {
-        text-align: center;
-        font-size: 1rem;
-    }
+        .nav-link a {
+            width: 80%;
+            text-align: center;
+            
+            
+        }
+    
+        .dropdown-menu {
+            position: absolute;
+            top: 2vh;
+            left: 90vh;
+            background-color: #444;
+            display: none;
+        }
+    
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
 
     .cta-container {
         display: flex;
@@ -48,4 +80,7 @@
     .arlo-list {
         margin-right: 2.5vw;
     }
+    
+    
 }
+

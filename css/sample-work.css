@@ -16,19 +16,19 @@ body {
     max-height: 100vh;
     background-color: rgb(100, 80, 70);
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;  /* Align with text links */
     margin: 0 2.5vw;  /* Add spacing similar to the other nav links */
-}
-
-.nav-logo img {
-    height: 100px;  /* Adjust to match the height of the text links */
+    height: 50px;  /* Adjust to match the height of the text links */
     width: auto;
     border-radius: 50px;
 }
+
 
 .background-container {
     width: 100vw;
@@ -63,53 +63,44 @@ h1 {
     height: 48px;
 }
 
+/* Navbar styling */
 .nav-container {
-    display: block;
-    
-}
-
-.nav-list {
     display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content:flex-start;
-    padding-inline-start: 20px;
-    height: 50px;
-    margin-top: 4vh;
-    
-
-}
-
-.nav-link {
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 0.5em 0.75em;  /* Ensure uniform padding */
     background-color: rgba(255, 255, 255, 0.33);
-    margin: 0 2.5vw;
-    border-radius: 4px;
-    border: 1px solid rgba(220, 229, 247, 0.599);
-    
-}  
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+/* Hamburger icon */
+.hamburger#hamburger{
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 2vh;
+    right: 5vw;
+    transform: translateY(-50%);
+}
+
+/* Navigation links */
+#nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link li {
+    position: relative;
+}
 
 .nav-link a {
-    color: rgb(10, 85, 35);
+    font-family: 'Oswald';
+    color: #fff;
     text-decoration: none;
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 200;
-    font-stretch: ultra-condensed;
-    -webkit-text-stroke: 1px #000;
-    text-shadow: 2px 2px 5px rgba(220, 229, 247, 0.599);
-}
-
-.nav-link:hover {
-    background-color: rgba(81, 108, 162, 0.599)
-}
-
-.nav-link a:hover {
-    color: #043673;
     font-size: 1.2rem;
-    text-shadow: none;
 }
 
 .cta-container {
@@ -239,4 +230,11 @@ li.arlo-link {
 iframe {
     border:none;
     overflow:hidden
+}
+
+.mobile-menu-button {
+    display: none;
+    position: absolute;
+    top: 2vh;
+    left: 93vw;
 }
