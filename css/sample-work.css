@@ -75,10 +75,10 @@ h1 {
 
 /* Hamburger icon */
 .hamburger#hamburger{
+    display: none;
     font-size: 2rem;
     color: #fff;
     cursor: pointer;
-    display: none;
     position: absolute;
     top: 2vh;
     right: 5vw;
