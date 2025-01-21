@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('static/Oswald-Bold.ttf') format('truetype');
+    src: url('static/Oswald-ExtraLight.ttf') format('truetype');
+    src: url('static/Oswald-Light.ttf') format('truetype');
+    src: url('static/Oswald-Medium.ttf') format('truetype');
+    src: url('static/Oswald-Regular.ttf') format('truetype');
+    src: url('static/Oswald-SemiBold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Chewy';
+    src: url('Chewy/Chewy-Regular.ttf') format('truetype')
+  }
+
+  @font-face {
+    font-family: "MarkerFelt";
+    src: url('MarkerFelt/MarkerFelt-Thin-01.ttf') format('truetype');
+    src: url('MarkerFelt/MarkerFelt-Wide-02.ttf') format('truetype');
+  }

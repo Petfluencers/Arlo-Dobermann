@@ -1,0 +1,51 @@
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .heading-1 {
+        margin-right: 8vw;
+    }
+    .background-container {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(/images/arlo-dobermann-cover.webp);
+        background-size: 200%;
+        background-position: calc(50% - 20px) 30%;
+        background-attachment: fixed;
+       
+    }
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        padding-top: 40vh;
+    }
+
+    .nav-list {
+        justify-content: space-between;
+        padding-inline-start: none;
+        padding-inline-end: 4vw;
+    }
+
+    .nav-link a {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .cta-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cta-link {
+        text-align: center;
+        margin-left: 20vw;
+    }
+
+    .arlo-list {
+        margin-right: 2.5vw;
+    }
+}
