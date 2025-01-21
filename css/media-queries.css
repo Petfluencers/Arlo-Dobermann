@@ -10,7 +10,6 @@
     .background-container {
         width: 100vw;
         height: 100vh;
-        background-image: url(./images/arlo-dobermann-cover.webp);
         background-size: 200%;
         background-position: calc(50% - 20px) 30%;
         background-attachment: fixed;
