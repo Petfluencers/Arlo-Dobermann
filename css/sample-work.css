@@ -83,10 +83,10 @@ h1 {
 .nav-link {
     display: flex;
     align-items: center;
-    padding: 0.75vw 1.5vw;  /* Ensure uniform padding */
+    padding: 0.5em 0.75em;  /* Ensure uniform padding */
     background-color: rgba(255, 255, 255, 0.33);
     margin: 0 2.5vw;
-    border-radius: 5px;
+    border-radius: 4px;
     border: 1px solid rgba(220, 229, 247, 0.599);
     
 }  
@@ -148,7 +148,7 @@ ul.arlo-list {
 
 li.arlo-link {
     display: block;
-    margin: 5vh 0; 
+    margin: 2vh 0; 
 }
 
 .arlo-link a {
@@ -157,9 +157,9 @@ li.arlo-link {
     text-decoration: none;
     color: #000;
     font-size: 1.5rem;
-    padding: 1.5rem 1rem;
+    padding: 0.5em 0.75em;
     background-color:rgba(255, 255, 255, 0.33);
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center; 
     
 }
@@ -192,24 +192,50 @@ li.arlo-link {
     font-size: 1.5rem;
 }
 
-.happy-paws, .amazon-logo {
+.link-img {
     display: inline;
     height: 60px;
     width: auto;
 }
 
+.social-footer {
+    text-align: left; /* Align to the left like the nav bar */
+    font-size: 2rem;
+    font-family: "Oswald", sans-serif;
+    font-weight: 200;
+    margin-left: 20px; /* Adjust for alignment */
+}
+
 .social-list {
     display: flex;
-    flex-direction: row;
-    list-style-type: none;
+    justify-content: flex-start;  /* Align icons to the left */
+    align-items: center;
+    list-style: none;
+    gap: 1rem; /* Space between icons */
+    padding-left: 20px; /* Align with the heading */
+    margin: -3vh 0 0 0;
+    padding-bottom: 2.5vh;
 }
 
 .social-link {
-    margin: 0 0.5vw;
+    margin: 0;
 }
 
-.social-link a {
-    text-decoration: none;
-    
-    
+.header-3 {
+    display: flex;
+    margin-top: 5vh;
+    justify-content: center;
+}
+
+.video-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 5vh;
+}
+
+iframe {
+    border:none;
+    overflow:hidden
 }
