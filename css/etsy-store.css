@@ -1,0 +1,65 @@
+.etsy-widget-desktop {
+    display: block;
+    
+}
+
+.etsy-widget-tablet,
+.etsy-widget-mobile {
+    display: none;
+}
+
+/* Tablet (between 768px and 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .etsy-widget-desktop, 
+    .etsy-widget-mobile {
+        display: none;
+    }
+
+    .etsy-widget-tablet {
+        display: block;
+        box-shadow: 2px 2px 5px #333;
+    }
+}
+
+/* Mobile (up to 767px) */
+@media screen and (max-width: 767px) {
+    .etsy-widget-desktop,
+    .etsy-widget-tablet {
+        display: none;
+    }
+
+    .etsy-widget-mobile {
+        display: block;
+        box-shadow: 2px 2px 5px #333;
+    }
+}
+
+.heading-store {
+    display: flex;
+    width: 98vw;
+}
+
+
+.follow-store {
+    display: flex;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 2px 2px 5px #333;
+    margin-left: 5vw;
+    font-size: 1.2rem;
+    
+}
+
+.heart {
+    color: red;
+    text-shadow: 2px 2px 5px #333;
+    font-size: 1.2rem;
+}
+
+.store-logo-img {
+    width: 10rem;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 5px #333;
+    border-radius: 20px;
+}

@@ -54,13 +54,39 @@ h1 {
     margin-right: 5vw;
 }
 
-.heading-2 {
+.heading-2, .heading-3 {
     text-align: center;
 }
+
+.heading-store {
+    display: flex;
+    justify-content: center;
+}
+
+.heading-4 a {
+    color: #ededed;
+    text-shadow: 2px 2px 5px #333;
+    text-decoration: none;
+    display: block;
+}
+
+.heading-4 a:hover {
+    color: rgb(237, 156, 156);
+    font-family: 'Oswald';
+    font-weight: 400;
+    text-shadow: 2px 2px 5px #333;
+}
+
 
 .favicon {
     width: 48px;
     height: 48px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Navbar styling */

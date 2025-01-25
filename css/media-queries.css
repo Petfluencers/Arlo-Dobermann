@@ -29,7 +29,9 @@
     }
      
         img#hamburger {
-            display: block;  /* Show on mobile screens */
+            display: block;
+            margin-top: 3vh;
+            /* Show on mobile screens */
         }
     
         #nav-list {
@@ -83,6 +85,17 @@
 
     .arlo-list {
         margin-right: 2.5vw;
+    }
+
+    .store-logo-img {
+        display: none;
+        width: 3.5rem;
+        height: 5rem;
+    }
+
+    .heading-store {
+        width: 98vw;
+        height: 10vh;
     }
     
     
