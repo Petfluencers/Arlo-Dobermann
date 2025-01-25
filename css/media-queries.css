@@ -7,6 +7,11 @@
     .heading-1 {
         margin-right: 8vw;
     }
+
+    .heading-5 {
+        z-index: 0;
+    }
+
     .background-container {
         width: 100vw;
         height: 100vh;
@@ -67,10 +72,12 @@
             left: 90vh;
             background-color: #444;
             display: none;
+            z-index: 1000;
         }
     
         .dropdown.active .dropdown-menu {
             display: block;
+            z-index: 1000;
         }
 
     .cta-container {

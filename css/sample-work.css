@@ -58,6 +58,13 @@ h1 {
     text-align: center;
 }
 
+.heading-5 {
+    display: block;
+    position: absolute;
+    top: 10vh;
+    left: 30vw;
+}
+
 .heading-store {
     display: flex;
     justify-content: center;
