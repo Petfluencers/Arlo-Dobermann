@@ -64,22 +64,7 @@
     border-radius: 20px;
 }
 
-.pagination-controls {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.pagination-controls button {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.pagination-controls button:disabled {
-    background-color: #888;
-    cursor: not-allowed;
+.store-widget {
+    height: 80vh;
+    width: 100vw;
 }
