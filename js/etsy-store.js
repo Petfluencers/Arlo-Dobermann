@@ -1,4 +1,4 @@
-<script>
+
     let currentPage = 1;
     const itemsPerPage = 15;  // Adjust as needed
     const totalItems = 105;   // Total number of items in your Etsy store
@@ -30,4 +30,4 @@
     document.addEventListener('DOMContentLoaded', function () {
         loadEtsyPage(currentPage);
     });
-</script>
+
