@@ -15,11 +15,7 @@
     .background-container {
         width: 100vw;
         height: 100vh;
-<<<<<<< HEAD
-        background-image: url(../images/arlo-dobermann-cover.webp);
-=======
         background: #333 url(../images/arlo-dobermann-cover.webp) no-repeat center center;
->>>>>>> decf727acb19a9203ed3345149fd0da7d1a1c38a
         background-size: 200%;
         background-position: calc(50% - 20px) 30%;
         background-attachment: fixed;
