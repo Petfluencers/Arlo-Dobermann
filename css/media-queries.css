@@ -105,6 +105,13 @@
         width: 100%vw;
         height: 100%vh;
     }
+
+    div.story-image-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
     
 }
 
