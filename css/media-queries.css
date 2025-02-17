@@ -117,6 +117,14 @@
         display: flex;
         padding: 0;
     }
+    p.story-text {
+        display: block;
+        text-align: left;
+        margin-left: 10vw;
+        width: 80%;
+        margin-right: 10vw;
+
+    }
     
 }
 
