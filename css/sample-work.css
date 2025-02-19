@@ -257,10 +257,13 @@ li.arlo-link {
 .video-flex {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    gap: 1rem;
+    justify-content: space-evenly;
+    gap: .5rem;
     margin-top: 5vh;
     padding-bottom: 5vh;
+}
+.video-content {
+    display: block;
 }
 
 iframe {
@@ -316,7 +319,7 @@ p.diary-text {
     font-family: 'inter', Arial, Helvetica, sans-serif;
     font-size: 1.75em;
     color: rgb(32, 7, 7);
-    text-shadow: 1px 1px 10px #cecdec;
+    text-shadow: 0.5px 0.5px 1.5em #cecdec;
     width: 75vw;
     margin: 0 10vw 0 10vw;
     text-align: center;
