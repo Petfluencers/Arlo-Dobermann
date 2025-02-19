@@ -117,7 +117,7 @@
         display: flex;
         padding: 0;
     }
-    p.story-text {
+    p.story-text, p.diary-text {
         display: block;
         text-align: left;
         margin-left: 10vw;
@@ -125,6 +125,22 @@
         margin-right: 10vw;
 
     }
-    
+
+    p.diary-text {
+        font-size: 1.25em;
+    }
+    .video-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        column-gap: 5px;
+        
+    }
+    .video-content {
+        height: 100vh;
+        max-width: 90%;
+    }
 }
 
