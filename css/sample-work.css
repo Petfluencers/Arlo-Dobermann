@@ -255,15 +255,15 @@ li.arlo-link {
 }
 
 .video-flex {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
     flex-direction: row;
-    justify-content: space-evenly;
-    gap: .5rem;
     margin-top: 5vh;
     padding-bottom: 5vh;
 }
 .video-content {
-    display: block;
+   
 }
 
 iframe {
