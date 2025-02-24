@@ -145,16 +145,25 @@ img#hamburger{
     margin-right: 9vw;
 }
 
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
 .cta-link {
     text-decoration: none;
     padding: 0.75vw 1.5vw;
     background-color: rgba(255, 255, 255, 0.33);
     margin: 0 2.5vw;
+    animation: pulse 1.5s infinite;/*
+    transition: transform 0.3s ease-in-out;*/
     border-radius: 5px;  
     color: #4c0606;
     font-size: 1.5rem; 
     border: 1px solid rgba(220, 229, 247, 0.599);
 }
+
 
 .hero-container {
     display: flex;
@@ -384,12 +393,16 @@ p.diary-text {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
     /* Black background with opacity */
+
+   
+    justify-content: center;
+    align-items: center;
   }
   
   .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
+    width: 90%;
     max-width: 700px;
   }
   
