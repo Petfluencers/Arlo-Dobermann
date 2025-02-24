@@ -148,10 +148,19 @@
  
 }
 
-@media screen and (min-width: 481px and max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
     .video-flex {
         display: grid;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px;
     }
+
+    div.story-image-div {
+        display: flex;
+        max-width: 100% !important;
+        width: 90%;
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+        }
 }
