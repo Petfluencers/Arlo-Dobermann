@@ -330,6 +330,22 @@ li.arlo-link:hover {
     margin: 0;
 }
 
+.social-link a {
+    display: inline-block;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.social-link a:hover {
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+}
+
+@media (hover: none) {
+    .social-link a:active {
+        box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+        transition: box-shadow 0.3s ease-in-out;
+    }
+}
+
 .header-3 {
     display: flex;
     margin-top: 5vh;
@@ -409,7 +425,7 @@ p.diary-text {
     font-family: 'Oswald', 'inter', Arial, Helvetica, sans-serif;
     font-size: 1.75em;
     font-weight: 200;
-    color: rgb(32, 7, 7);
+    color: rgb(215, 211, 211);
     text-shadow: 0.5px 0.5px 1.5em #cecdec;
     width: 75vw;
     margin: 0 10vw 0 10vw;
