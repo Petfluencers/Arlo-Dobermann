@@ -262,9 +262,7 @@ li.arlo-link {
     margin-top: 5vh;
     padding-bottom: 5vh;
 }
-.video-content {
-   
-}
+
 
 iframe {
     border:none;
@@ -279,8 +277,9 @@ iframe {
 }
 p.story-text {
     display: block;
-    font-family: 'inter', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', 'inter', Arial, Helvetica, sans-serif;
     font-size: 1.5em;
+    font-weight: 200;
     color: #cecece;
     text-shadow: 2px 2px 3px #333;
     width: 75vw;
@@ -316,8 +315,9 @@ img.story-image {
 
 p.diary-text {
     display: block;
-    font-family: 'inter', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', 'inter', Arial, Helvetica, sans-serif;
     font-size: 1.75em;
+    font-weight: 200;
     color: rgb(32, 7, 7);
     text-shadow: 0.5px 0.5px 1.5em #cecdec;
     width: 75vw;

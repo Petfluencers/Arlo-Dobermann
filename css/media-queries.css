@@ -119,6 +119,7 @@
     div.hero-section {
         display: flex;
         padding: 0;
+        margin: 0;
     }
     p.story-text, p.diary-text {
         display: block;
