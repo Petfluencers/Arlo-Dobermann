@@ -261,6 +261,18 @@ li.arlo-link:hover {
     padding: 0.75rem 1.25rem; /* Slightly larger padding without shifting */
 }
 
+/* Gallery Image Hover Zoom */
+.gallery-item img {
+    transition: transform 0.3s ease-in-out;
+    touch-action: manipulation;
+}
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+.gallery-item img.active {
+    transform: scale(1.05);
+}
+
 
 .hero-image {
     display: flex;

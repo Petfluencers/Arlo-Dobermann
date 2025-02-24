@@ -115,5 +115,21 @@
 
     </footer>
     <script src="js/dropdown.js"></script>
+    <script>
+        document.querySelectorAll(".gallery-item img").forEach(image => {
+            image.addEventListener("click", function (event) {
+                // Prevent modal from opening immediately
+                if (!this.classList.contains("active")) {
+                    event.preventDefault(); // Stop modal from opening
+                    document.querySelectorAll(".gallery-item img").forEach(img => img.classList.remove("active"));
+                    this.classList.add("active");
+                } else {
+                    // Allow normal modal opening on the second tap
+                    this.classList.remove("active");
+                }
+            });
+        });
+        
+    </script>
   </body>
 </html>
