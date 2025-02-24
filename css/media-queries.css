@@ -134,11 +134,15 @@
     }
     .video-flex {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 10px;
         justify-content: center;
         align-items: center;
         
         
+    }
+    .video-content {
+        max-width: 100%;
     }
  
 }
@@ -146,6 +150,6 @@
 @media (max-width: 768px) {
     .video-flex {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
