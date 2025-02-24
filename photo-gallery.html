@@ -117,14 +117,22 @@
     <script src="js/dropdown.js"></script>
     <script>
         document.querySelectorAll(".gallery-item img").forEach(image => {
+            let tapped = false; // Track first tap
+        
             image.addEventListener("click", function (event) {
-                // Prevent modal from opening immediately
-                if (!this.classList.contains("active")) {
-                    event.preventDefault(); // Stop modal from opening
+                if (!tapped) {
+                    // First tap: Zoom in, prevent modal
+                    event.preventDefault(); // Stop the modal from opening
                     document.querySelectorAll(".gallery-item img").forEach(img => img.classList.remove("active"));
                     this.classList.add("active");
+                    tapped = true;
+        
+                    // Reset tap state after 400ms (prevents immediate modal open)
+                    setTimeout(() => {
+                        tapped = false;
+                    }, 400);
                 } else {
-                    // Allow normal modal opening on the second tap
+                    // Second tap: Remove zoom & allow modal to open
                     this.classList.remove("active");
                 }
             });
