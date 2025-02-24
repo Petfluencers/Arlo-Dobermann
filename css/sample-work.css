@@ -18,6 +18,11 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
 }
 
 .nav-logo {
