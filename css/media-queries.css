@@ -135,7 +135,7 @@
     .video-flex {
         display: grid;
         grid-template-columns: repeat(1, 1fr) !important;
-        gap: 10px;
+        max-width: 100%;
         justify-content: center;
         align-items: center;
         
@@ -147,9 +147,10 @@
  
 }
 
-@media (max-width: 768px) {
+@media screen and (min-width: 481px and max-width: 768px) {
     .video-flex {
         display: grid;
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
     }
 }
