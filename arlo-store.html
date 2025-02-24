@@ -65,38 +65,48 @@
     <script src="js/dropdown.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function(event) {
-        // Array of texts to type
-        const dataText = ["Arlo's Store"];
-        const heading = document.querySelector(".heading-1");
-        let currentTextIndex = 0;
+        // Array of texts to type for each heading
+        const headings = [
+            { element: document.querySelector(".heading-1"), text: "Arlo Dobermann: The Page" },
+            { element: document.querySelector(".heading-2"), text: "Your Trusted Companion" },
+            { element: document.querySelector(".heading-3"), text: "A Legacy of Loyalty" }
+        ];
     
-        function typeWriter(text, i, fnCallback) {
+        function typeWriter(element, text, i, fnCallback) {
             if (i < text.length) {
-                heading.textContent = text.substring(0, i + 1); // Update text smoothly
-                setTimeout(() => typeWriter(text, i + 1, fnCallback), 100);
+                element.textContent = text.substring(0, i + 1); // Add letters one by one
+                setTimeout(() => typeWriter(element, text, i + 1, fnCallback), 100);
             } else if (typeof fnCallback === "function") {
-                setTimeout(fnCallback, 1000); // Delay before starting next text
+                setTimeout(fnCallback, 1000); // Delay before removing cursor
             }
         }
     
-        function startTextAnimation(i) {
-            if (i >= dataText.length) {
-                i = 0; // Restart loop when finished
+        function startTextAnimation(index) {
+            if (index >= headings.length) return; // Stop when all headings are done
+    
+            let heading = headings[index];
+    
+            if (heading.element) {
+                heading.element.textContent = ""; // Clear text
+                heading.element.style.borderRight = "3px solid white"; // Show blinking cursor during typing
+    
+                typeWriter(heading.element, heading.text, 0, () => {
+                    heading.element.style.borderRight = "none"; // Remove cursor after typing
+    
+                    // Ensure text centers on mobile after typing (if needed)
+                    if (window.innerWidth <= 768) {
+                        heading.element.classList.add("centered");
+                    }
+    
+                    // Start next heading animation
+                    startTextAnimation(index + 1);
+                });
             }
-            heading.textContent = ""; // Clear text
-            heading.style.borderRight = "3px solid white"; // Ensure blinking cursor appears
-            typeWriter(dataText[i], 0, () => {
-                setTimeout(() => {
-                    heading.style.borderRight = "none"; // Remove cursor after typing
-                    setTimeout(() => startTextAnimation(i + 1), 2000); // Wait before next text
-                }, 500);
-            });
         }
     
-        // Start typing effect
-        startTextAnimation(currentTextIndex);
+        // Start the typing effect for all headings sequentially
+        startTextAnimation(0);
     });
-    
     
   </script>
   <script src="js/body-fade-in.js"></script>

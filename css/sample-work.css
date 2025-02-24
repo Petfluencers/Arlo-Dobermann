@@ -56,7 +56,7 @@ h1 {
 
 .heading-1 {
     
-    display:inline-block;
+    display:block;
     justify-content: right;
     align-items: right;
     text-align: right;
@@ -69,7 +69,16 @@ h1 {
     animation: 
     typing 3.5s steps(40, end),
     blink-caret 1s step-end infinite;
-    
+    transition: text-align 0.5s ease-in-out, margin 0.5s ease-in-out;
+}
+/* Center text on mobile after animation */
+@media (max-width: 768px) {
+    .heading-1.centered, .heading-2.centered, .heading-3.centered {
+        text-align: center;
+        margin-right: 0;
+        display: block;
+        width: 100%; /* Ensure it centers properly */
+    }
 }
 
 /* The typing effect 
@@ -97,6 +106,7 @@ h1 {
     animation: 
     typing 3.5s steps(40, end),
     blink-caret 1s step-end infinite;
+    transition: text-align 0.5s ease-in-out, margin 0.5s ease-in-out;
 }
 /* The typing effect*/ 
 @keyframes typing {
