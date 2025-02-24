@@ -294,7 +294,16 @@ p.story-text {
     width: 75vw;
     margin: 0 10vw 0 10vw;
     text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
+
+p.story-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 div.story-image-div {
     display: flex;
     flex-direction: row;

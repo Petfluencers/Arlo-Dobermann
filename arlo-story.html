@@ -104,5 +104,21 @@
 
     </footer>
     <script src="js/dropdown.js"></script>
+    <script>// Select all .story-text elements
+      const storyElements = document.querySelectorAll(".story-text");
+      
+      // Create an Intersection Observer
+      const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add("visible");
+                  observer.unobserve(entry.target); // Stop observing once it becomes visible
+              }
+          });
+      }, { threshold: 0.2 }); // Adjusted threshold for better detection
+      
+      // Observe each story-text element
+      storyElements.forEach(el => observer.observe(el));
+      </script>
   </body>
 </html>
