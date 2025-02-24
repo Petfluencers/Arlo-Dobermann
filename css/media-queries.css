@@ -7,7 +7,20 @@
     .heading-1 {
         margin-right: 8vw;
         margin-top: 40vh;
+        font-size: 2.4rem;
     }
+
+    /* The typing effect 
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }*/
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(255, 255, 255); }
+  }
 
     .heading-5 {
         z-index: 0;
@@ -147,8 +160,18 @@
     .video-content {
         max-width: 100%;
     }
- 
 }
+
+    @media (hover: hover) {
+        li.arlo-link:hover {
+            transform: scale(1.05);
+        }
+    
+        .arlo-link a:hover {
+            transform: scale(1.1);
+            background-color: rgba(234, 126, 126, 0.25);
+        }
+    }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .video-flex {
@@ -164,5 +187,9 @@
         flex-direction: column !important;
         justify-content: center;
         align-items: center;
+        }
+    .arlo-link a:active {
+        transform: scale(1.05); /* Slight effect on tap */
+        background-color: rgba(234, 126, 126, 0.35); /* Darker for visual feedback */
         }
 }

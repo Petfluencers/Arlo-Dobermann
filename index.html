@@ -53,5 +53,41 @@
 
     </footer>
     <script src="js/dropdown.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+        // Array of texts to type
+        const dataText = ["Arlo Dobermann: The Page"];
+        const heading = document.querySelector(".heading-1");
+        let currentTextIndex = 0;
+    
+        function typeWriter(text, i, fnCallback) {
+            if (i < text.length) {
+                heading.textContent = text.substring(0, i + 1); // Update text smoothly
+                setTimeout(() => typeWriter(text, i + 1, fnCallback), 100);
+            } else if (typeof fnCallback === "function") {
+                setTimeout(fnCallback, 1000); // Delay before starting next text
+            }
+        }
+    
+        function startTextAnimation(i) {
+            if (i >= dataText.length) {
+                i = 0; // Restart loop when finished
+            }
+            heading.textContent = ""; // Clear text
+            heading.style.borderRight = "3px solid white"; // Ensure blinking cursor appears
+            typeWriter(dataText[i], 0, () => {
+                setTimeout(() => {
+                    heading.style.borderRight = "none"; // Remove cursor after typing
+                    setTimeout(() => startTextAnimation(i + 1), 2000); // Wait before next text
+                }, 500);
+            });
+        }
+    
+        // Start typing effect
+        startTextAnimation(currentTextIndex);
+    });
+    
+    
+  </script>
   </body>
 </html>

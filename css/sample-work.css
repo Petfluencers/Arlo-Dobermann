@@ -50,17 +50,60 @@ h1 {
 }
 
 .heading-1 {
+    
+    display:inline-block;
+    justify-content: right;
+    align-items: right;
     text-align: right;
     margin-right: 5vw;
+    font-size: 3.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    width: fit-content;
+    animation: 
+    typing 3.5s steps(40, end),
+    blink-caret 1s step-end infinite;
+    
 }
+
+/* The typing effect 
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }*/
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(255, 255, 255); }
+  }
 
 .heading-2, .heading-3 {
+    display: block;
+    margin: 0 auto;
     text-align: center;
-}
-
-.heading-3 {
     text-shadow: 4px 4px #4c0606;
+    font-size: 3.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    width: fit-content;
+    animation: 
+    typing 3.5s steps(40, end),
+    blink-caret 1s step-end infinite;
 }
+/* The typing effect*/ 
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(255, 255, 255); }
+  }
 
 .heading-5 {
     display: block;
@@ -172,6 +215,7 @@ img#hamburger{
     align-items: center;
 }
 
+/* Ensure the list is centered and structured */
 ul.arlo-list {
     display: flex;
     flex-direction: column;
@@ -179,32 +223,44 @@ ul.arlo-list {
     justify-content: center;
     align-items: center;
     padding-inline-start: 20px;
-    
 }
 
+/* Styling for individual link blocks */
 li.arlo-link {
     display: block;
-    margin: 2vh 0; 
+    margin: 2vh 0;
+    transition: transform 0.3s ease-in-out;
 }
 
+/* Smooth hover effect */
+li.arlo-link:hover {
+    transform: scale(1.05); /* Slight scaling effect for engagement */
+}
+
+/* Base link styling */
 .arlo-link a {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     color: #000;
     font-size: 1.5rem;
-    padding: 0.5em 0.75em;
-    background-color:rgba(255, 255, 255, 0.33);
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.33);
     border-radius: 10px;
-    text-align: center; 
-    
+    text-align: center;
+    transition: all 0.3s ease-in-out;
 }
 
+/* Hover Effect */
 .arlo-link a:hover {
     color: rgb(47, 2, 2);
     background-color: rgba(234, 126, 126, 0.25);
-    padding: 2rem 1.5rem;
+    transform: scale(1.1); /* Smooth scaling instead of padding */
+    padding: 0.75rem 1.25rem; /* Slightly larger padding without shifting */
 }
+
 
 .hero-image {
     display: flex;
