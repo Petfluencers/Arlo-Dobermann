@@ -200,7 +200,7 @@
         }
     }
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 834px) {
     .video-flex {
         display: grid;
         grid-template-columns: repeat(2, 1fr) !important;
