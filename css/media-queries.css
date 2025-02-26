@@ -220,22 +220,55 @@
         background-color: rgba(234, 126, 126, 0.35); /* Darker for visual feedback */
         }
 
-        /* Hamburger Menu */
-.nav-container {
-    position: relative;
-    background: rgba(250, 250, 250, 0.8);
-    padding: 10px;
-}
-.hamburger {
-    cursor: pointer;
-}
-#nav-list {
-    position: absolute;
-    top: -100%; /* Start off-screen */
-    left: 0;
-    width: 100%;
-    background: rgb(0, 0, 0);
-    transition: top 0.5s ease-in-out;
-}
+    /* Hamburger Menu */
+    img#hamburger {
+        display: block;
+        margin-top: 2vh;
+        /* Show on mobile screens */
+    }
+
+    #nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1000;
+    }
+
+    #nav-list.active {
+        display: flex;
+    }
+
+    .nav-link li {
+        text-align: center;
+        padding: 1rem 0;
+        border: 1px solid #fff;
+    }
+
+    .nav-link a {
+        width: 80%;
+        text-align: center;
+        
+        
+    }
+    .nav-container {
+        position: relative;
+        background: rgba(250, 250, 250, 0.8);
+        padding: 10px;
+    }
+    .hamburger {
+        cursor: pointer;
+    }
+    #nav-list {
+        position: absolute;
+        top: -100%; /* Start off-screen */
+        left: 0;
+        width: 100%;
+        background: rgb(0, 0, 0);
+        transition: top 0.5s ease-in-out;
+    }
 #nav-list.active { top: 60px; } /* Slide in from the top */
 }
