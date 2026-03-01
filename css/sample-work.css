@@ -340,6 +340,7 @@ li.arlo-link:hover {
     font-family: "Oswald", sans-serif;
     font-weight: 200;
     margin-left: 20px; /* Adjust for alignment */
+    background-color: var(--color-dark);
 }
 
 .social-list {
