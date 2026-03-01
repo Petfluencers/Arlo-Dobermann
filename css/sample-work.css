@@ -60,7 +60,7 @@ body.loaded {
 }
 
 h1 {
-    color: var(--color-heading);
+    color: var(--color-bg);
     font-family: 'Times New Roman', Times, serif;
     font-weight: 300;
     font-size: 3.5rem;
