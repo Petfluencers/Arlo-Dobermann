@@ -50,7 +50,7 @@ body.loaded {
 .background-container {
     width: 100vw;
     height: 100vh;
-    background: #333 url(../images/arlo-dobermann-cover.webp) no-repeat center center;
+    background: var(--color-dark) url(../images/arlo-dobermann-cover.webp) no-repeat center center;
     background-size: cover;
     background-position: 0px 0px;
     padding-bottom: 5vh;
