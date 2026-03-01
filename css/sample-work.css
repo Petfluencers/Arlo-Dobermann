@@ -339,7 +339,7 @@ li.arlo-link:hover {
     font-size: 2rem;
     font-family: "Oswald", sans-serif;
     font-weight: 200;
-    margin-left: 20px; /* Adjust for alignment */
+    /* Adjust for alignment */
     background-color: var(--color-dark);
     color: var(--color-bg);
 }
