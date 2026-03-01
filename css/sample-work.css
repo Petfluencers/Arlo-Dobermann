@@ -341,6 +341,7 @@ li.arlo-link:hover {
     font-weight: 200;
     margin-left: 20px; /* Adjust for alignment */
     background-color: var(--color-dark);
+    color: var(--color-bg);
 }
 
 .social-list {
