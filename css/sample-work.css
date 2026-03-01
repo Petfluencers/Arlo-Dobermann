@@ -78,10 +78,10 @@ h1 {
     overflow: hidden;
     border-right: 3px solid white;
     width: fit-content;
-    animation: 
+    /*animation: 
     typing 3.5s steps(40, end),
     blink-caret 1s step-end infinite;
-    transition: text-align 0.5s ease-in-out, margin 0.5s ease-in-out;
+    transition: text-align 0.5s ease-in-out, margin 0.5s ease-in-out;*/
 }
 /* Center text on mobile after animation */
 @media (max-width: 768px) {
