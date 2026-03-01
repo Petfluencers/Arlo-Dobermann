@@ -16,11 +16,11 @@
     to { width: 100% }
   }*/
   
-  /* The typewriter cursor effect */
+  /* The typewriter cursor effect 
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: rgb(255, 255, 255); }
-  }
+  } */
 
   .heading-2, .heading-3 {
     font-size: 2rem;
@@ -146,9 +146,10 @@
         margin-left: 10vw;
         width: 80%;
         margin-right: 10vw;
+        color: var(--color-text)
 
     }
-
+    
     p.diary-text {
         font-size: 1.25em;
     }

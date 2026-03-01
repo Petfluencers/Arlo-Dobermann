@@ -1,3 +1,14 @@
+:root {
+  --color-bg: #fdfdf1;
+  --color-section: #cdc0a0;
+  --color-text: #22332f;
+  --color-heading: #000000;
+  --color-accent: #ff4b3a;
+  --color-accent-hover: #e33d2e;
+  --color-tan: #d98443;
+  --color-dark: #22332f;
+}
+
 .chewy-regular {
     font-family: "Chewy", serif;
     font-weight: 400;
@@ -14,7 +25,8 @@
 body {
     max-width: 100vw;
     max-height: 100vh;
-    background-color: rgb(100, 80, 70);
+    background-color: var(--color-bg);
+    color: var(--color-text);
     overflow-x: hidden;
     margin: 0;
     padding: 0;
@@ -48,7 +60,7 @@ body.loaded {
 }
 
 h1 {
-    color: #fff;
+    color: var(--color-heading);
     font-family: 'Times New Roman', Times, serif;
     font-weight: 300;
     font-size: 3.5rem;
@@ -88,16 +100,18 @@ h1 {
   }*/
   
   /* The typewriter cursor effect */
-  @keyframes blink-caret {
+ /* @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: rgb(255, 255, 255); }
-  }
+  } */
 
 .heading-2, .heading-3 {
+    color: var(--color-heading);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 300;
     display: block;
     margin: 0 auto;
     text-align: center;
-    text-shadow: 4px 4px #4c0606;
     font-size: 3.5rem;
     white-space: nowrap;
     overflow: hidden;
@@ -108,17 +122,17 @@ h1 {
     blink-caret 1s step-end infinite;
     transition: text-align 0.5s ease-in-out, margin 0.5s ease-in-out;
 }
-/* The typing effect*/ 
+/* The typing effect
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
   }
   
-  /* The typewriter cursor effect */
+  /* The typewriter cursor effect 
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: rgb(255, 255, 255); }
-  }
+  } */
 
 .heading-5 {
     display: block;
@@ -131,14 +145,16 @@ h1 {
 }
 
 .heading-4 a {
-    color: #ededed;
+    color: var(--color-heading);
+    font-family: 'Oswald';
+    font-weight: 400;
     text-shadow: 2px 2px 5px #333;
     text-decoration: none;
     display: block;
 }
 
 .heading-4 a:hover {
-    color: rgb(237, 156, 156);
+    color: var(--color-accent-hover);
     font-family: 'Oswald';
     font-weight: 400;
     text-shadow: 2px 2px 5px #333;
@@ -161,7 +177,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.33);
+    background-color: var(--color-section);
     padding: 1rem 2rem;
     position: relative;
 }
@@ -170,7 +186,7 @@ h1 {
 img#hamburger{
     display: none;
     font-size: 2rem;
-    color: #fff;
+    color: var(--color-text);
     cursor: pointer;
     position: absolute;
     top: 2vh;
@@ -191,7 +207,7 @@ img#hamburger{
 
 .nav-link a {
     font-family: 'Oswald';
-    color: #fff;
+    color: var(--color-text);
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 200;
@@ -212,12 +228,12 @@ img#hamburger{
 .cta-link {
     text-decoration: none;
     padding: 0.75vw 1.5vw;
-    background-color: rgba(255, 255, 255, 0.33);
+    background-color: var(--color-accent);
     margin: 0 2.5vw;
     animation: pulse 1.5s infinite;/*
     transition: transform 0.3s ease-in-out;*/
     border-radius: 5px;  
-    color: #4c0606;
+    color: var(--color-dark);
     font-size: 1.5rem; 
     border: 1px solid rgba(220, 229, 247, 0.599);
 }
@@ -259,10 +275,10 @@ li.arlo-link:hover {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #000;
+    color: var(--color-dark);
     font-size: 1.5rem;
     padding: 0.75rem 1rem;
-    background-color: rgba(255, 255, 255, 0.33);
+    background-color: var(--color-accent);
     border-radius: 10px;
     text-align: center;
     transition: all 0.3s ease-in-out;
@@ -270,8 +286,8 @@ li.arlo-link:hover {
 
 /* Hover Effect */
 .arlo-link a:hover {
-    color: rgb(47, 2, 2);
-    background-color: rgba(234, 126, 126, 0.25);
+    color: var(--color-bg);
+    background-color: var(--color-accent-hover);
     transform: scale(1.1); /* Smooth scaling instead of padding */
     padding: 0.75rem 1.25rem; /* Slightly larger padding without shifting */
 }
@@ -388,8 +404,7 @@ p.story-text {
     font-family: 'Oswald', 'inter', Arial, Helvetica, sans-serif;
     font-size: 1.5em;
     font-weight: 200;
-    color: #cecece;
-    text-shadow: 2px 2px 3px #333;
+    color: var(--color-text);
     width: 75vw;
     margin: 0 10vw 0 10vw;
     text-align: center;
@@ -418,7 +433,7 @@ figure.story-figure {
     margin: 2.5vh 0;
 }
 figcaption {
-    color: #f8f9fa;
+    color: var(--color-text);
     text-shadow: 1px 1px 0.5px #b7b3b3;
     font-family: 'Oswald', sans-serif;
     font-weight: 200;
@@ -435,7 +450,7 @@ p.diary-text {
     font-family: 'Oswald', 'inter', Arial, Helvetica, sans-serif;
     font-size: 1.75em;
     font-weight: 200;
-    color: rgb(215, 211, 211);
+    color: var(--color-text);
     text-shadow: 0.5px 0.5px 1.5em #cecdec;
     width: 75vw;
     margin: 0 10vw 0 10vw;
@@ -518,7 +533,7 @@ p.diary-text {
     position: absolute;
     top: 20px;
     right: 35px;
-    color: #fff;
+    color: var(--color-text);
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
