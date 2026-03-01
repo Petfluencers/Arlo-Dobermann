@@ -136,6 +136,7 @@ h1 {
 
 .heading-5 {
     display: block;
+    color: var(--color-heading)
    
 }
 
@@ -220,11 +221,11 @@ img#hamburger{
     margin-right: 9vw;
 }
 
-@keyframes pulse {
+/*@keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
-}
+}*/
 
 .cta-link {
     text-decoration: none;
