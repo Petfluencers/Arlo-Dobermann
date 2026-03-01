@@ -231,7 +231,7 @@ img#hamburger{
     padding: 0.75vw 1.5vw;
     background-color: var(--color-accent);
     margin: 0 2.5vw;
-    animation: pulse 1.5s infinite;/*
+    /*animation: pulse 1.5s infinite;
     transition: transform 0.3s ease-in-out;*/
     border-radius: 5px;  
     color: var(--color-dark);
