@@ -142,6 +142,7 @@ h1 {
 .heading-store {
     display: flex;
     justify-content: center;
+    color: var(--color-heading)
 }
 
 .heading-4 a {
