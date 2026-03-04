@@ -121,6 +121,7 @@ h1 {
     typing 3.5s steps(40, end),
     blink-caret 1s step-end infinite;
     transition: text-align 0.5s ease-in-out, margin 0.5s ease-in-out;
+    margin-bottom: 2rem;
 }
 /* The typing effect
 @keyframes typing {
@@ -136,8 +137,8 @@ h1 {
 
 .heading-5 {
     display: block;
-    color: var(--color-heading)
-    
+    color: var(--color-heading);
+    margin-bottom: 1rem;
    
 }
 
