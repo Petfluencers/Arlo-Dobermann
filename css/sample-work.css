@@ -255,9 +255,10 @@ ul.arlo-list {
     list-style-type: none;
     justify-content: center;
     align-items: center;
-    padding-inline-start: 20px;
+    padding-inline-start: 0;
+    gap: 14px;
+    margin-top: 2rem
 }
-
 /* Styling for individual link blocks */
 li.arlo-link {
     display: block;
@@ -267,7 +268,8 @@ li.arlo-link {
 
 /* Smooth hover effect */
 li.arlo-link:hover {
-    transform: scale(1.05); /* Slight scaling effect for engagement */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12); /* Slight scaling effect for engagement */
 }
 
 /* Base link styling */
@@ -279,19 +281,27 @@ li.arlo-link:hover {
     text-decoration: none;
     color: var(--color-dark);
     font-size: 1.5rem;
-    padding: 0.75rem 1rem;
-    background-color: var(--color-accent);
-    border-radius: 10px;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-}
 
+    padding: 1rem 1.5rem;
+
+    background-color: #ffffff;
+    border: 2px solid var(--color-accent);
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
+    transition: all 0.25s ease;
+    max-width: 520px;
+    width: 100%;
+}
 /* Hover Effect */
 .arlo-link a:hover {
-    color: var(--color-bg);
-    background-color: var(--color-accent-hover);
-    transform: scale(1.1); /* Smooth scaling instead of padding */
-    padding: 0.75rem 1.25rem; /* Slightly larger padding without shifting */
+    background-color: #fff6f6;
+    border-color: var(--color-accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
 /* Gallery Image Hover Zoom */
