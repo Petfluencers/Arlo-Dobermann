@@ -272,6 +272,12 @@ li.arlo-link:hover {
     box-shadow: 0 8px 18px rgba(0,0,0,0.12); /* Slight scaling effect for engagement */
 }
 
+.store-description {
+    max-width: 750px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+
 /* Base link styling */
 .arlo-link a {
     display: flex;
