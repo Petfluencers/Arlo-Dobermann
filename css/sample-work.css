@@ -496,6 +496,23 @@ p.diary-text {
     object-fit: cover;
     cursor: pointer;
   }
+  .site-credit {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 10px;
+    margin-right: 5px;
+    text-align: right;
+    
+}
+
+.site-credit a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.site-credit a:hover {
+    text-decoration: underline;
+}
   
   @media (max-width: 1200px) {
     .gallery-item {
