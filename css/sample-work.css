@@ -277,6 +277,10 @@ li.arlo-link:hover {
     margin: 0 auto 30px auto;
     text-align: center;
 }
+.etsy-widget iframe {
+  border: none;
+  border-radius: 12px;
+}
 
 /* Base link styling */
 .arlo-link a {
