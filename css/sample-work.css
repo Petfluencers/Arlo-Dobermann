@@ -497,12 +497,10 @@ p.diary-text {
     cursor: pointer;
   }
   .site-credit {
-    font-size: 0.85rem;
-    opacity: 0.8;
-    margin-top: 10px;
-    margin-right: 5px;
-    text-align: right;
-    
+    margin-top: 16px;
+    font-size: 0.8rem;
+    opacity: 0.85;
+    text-align: center;
 }
 
 .site-credit a {
