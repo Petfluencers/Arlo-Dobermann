@@ -501,6 +501,7 @@ p.diary-text {
     font-size: 0.8rem;
     opacity: 0.85;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .site-credit a {
