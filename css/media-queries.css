@@ -315,10 +315,12 @@
 
     /* Hamburger Menu */
     img#hamburger {
-        display: block;
-        margin-top: 2vh;
-        /* Show on mobile screens */
-    }
+            display: block;
+            padding-bottom: 2vh;
+            
+           
+            /* Show on mobile screens */
+        }
 
     #nav-list {
         display: none;
