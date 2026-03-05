@@ -1,8 +1,10 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const hamburger = document.getElementById('hamburger');
-    const navList = document.getElementById('nav-list');
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("hamburger");
+  const menu = document.getElementById("nav-list");
+  if (!btn || !menu) return;
 
-    hamburger.addEventListener('click', function() {
-        navList.classList.toggle('active');
-    });
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+  });
 });

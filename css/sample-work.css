@@ -88,6 +88,7 @@ h1 {
     align-items: center;
     text-align: center;
     margin-right: 5vw;
+    margin-top: 40vh;
     font-size: 3.5rem;
     white-space: nowrap;
     overflow: hidden;
@@ -226,7 +227,7 @@ img#hamburger{
 
 .nav-link a {
     font-family: 'Oswald';
-    color: var(--color-text);
+    color: var(--color-bg);
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 200;
@@ -234,8 +235,9 @@ img#hamburger{
 
 .cta-container {
     display: flex;
-    justify-content: right;
+    justify-content: center;
     margin-right: 9vw;
+    margin-top: 2vh;
 }
 
 /*@keyframes pulse {
