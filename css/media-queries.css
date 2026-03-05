@@ -45,7 +45,7 @@
     .background-container {
         width: 100vw;
         height: 100vh;
-        background: #333 url(../images/arlo-dobermann-cover.webp) no-repeat center center;
+        background: #333 no-repeat center center;
         background-size: 200%;
         background-position: calc(50% - 20px) 30%;
         background-attachment: fixed;
@@ -62,7 +62,9 @@
      
         img#hamburger {
             display: block;
-            margin-top: 3vh;
+            padding-bottom: 2vh;
+            
+           
             /* Show on mobile screens */
         }
     
