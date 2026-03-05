@@ -1,13 +1,25 @@
 @media screen and (max-width: 480px) {
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+        }
     h1 {
         font-size: 2rem;
         text-align: center;
     }
     
     .heading-1 {
-        margin-right: 8vw;
+       
         margin-top: 40vh;
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.2;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    figcaption {
+        font-size: 0.9rem;
+        text-align: center;
+        margin-top: 8px;
     }
 
     /* The typing effect 
@@ -101,54 +113,86 @@
             z-index: 1000;
         }
 
-        /* --- Arlo Links Page: Mobile overflow + wrapping fix --- */
+       
+  /* give the whole list breathing room */
+  .arlo-list {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 
-        /* Make sure the overall list can't exceed the viewport */
-        .arlo-list {
-        max-width: 100%;
-        }
+  /* make each card feel like a card, not a billboard */
+    .arlo-link {
+    
+    max-width: 100%;
+    margin: 12px 0;
+    padding: 8px;
 
-        /* Each link card should be constrained and allow wrapping */
-        .arlo-link {
-        max-width: 100%;
-        box-sizing: border-box;
-        overflow: hidden; /* prevents tiny horizontal bleed */
-        }
+    box-sizing: border-box;
+    justify-content: flex-start;
+    gap: 12px;
 
-        /* If the card is flex (icon + text), allow wrapping/shrinking */
-        .arlo-link {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        flex-wrap: wrap;    /* key: lets text drop under icon if needed */
-        }
+    display: flex;
+    white-space: normal;
+    align-items: flex-start;
+    text-align: center;
 
-        /* Text/anchors inside must be allowed to shrink */
-        .arlo-link a,
-        .arlo-link p,
-        .arlo-link span,
-        .arlo-link div {
-        min-width: 0;              /* key for flex overflow bugs */
-        overflow-wrap: anywhere;   /* breaks long strings/URLs */
-        word-break: break-word;    /* fallback */
-        }
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
 
-        /* Images/icons shouldn't force layout wider */
-        .arlo-link img {
-        max-width: 100%;
-        height: auto;
-        }
 
+  /* shrink logos/icons so they don't dominate */
+  .arlo-link img {
+    max-width: 60px;
+    height: auto;
+    margin-bottom: 8px;
+    margin-right: 20px;
+  }
+
+  /* fix the “long line” problem + make text prettier */
+  .arlo-link a,
+  .arlo-link p,
+  .arlo-link span,
+  .arlo-link div {
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    padding: .5rem;
+
+    font-size: 1rem;           /* adjust down if needed (0.95rem) */
+    line-height: 1.25;         /* tighter vertical rhythm */
+  }
+
+  /* optional: if headings are giant, tame them */
+  .arlo-link h1,
+  .arlo-link h2,
+  .arlo-link h3 {
+    font-size: 1.05rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+}
     .cta-container {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-left: 3rem;
+        padding: 0.1rem;
+        margin-top: 10px;
+        border-radius: 15px;
         
     }
     .cta-link {
         text-align: center;
-        
+        padding: 8px 16px;
+        font-size: 1.1rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
     }
 
     .arlo-list {
@@ -227,7 +271,7 @@
     transition: top 0.5s ease-in-out;
 }
 #nav-list.active { top: 60px; } /* Slide in from the top */
-}
+
 
     @media (hover: hover) {
         li.arlo-link:hover {
@@ -245,6 +289,9 @@
     }
 
 @media screen and (min-width: 481px) and (max-width: 840px) {
+    body {
+  overflow-x: hidden;
+}
     .video-flex {
         display: grid;
         grid-template-columns: repeat(2, 1fr) !important;
@@ -309,42 +356,59 @@
         cursor: pointer;
     }
 
-    /* --- Arlo Links Page: Mobile overflow + wrapping fix --- */
+    @media (max-width: 768px) {
+  /* give the whole list breathing room */
+  .arlo-list {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 
-/* Make sure the overall list can't exceed the viewport */
-.arlo-list {
-  max-width: 100%;
-}
+  /* make each card feel like a card, not a billboard */
+  .arlo-link {
+    width: 100%;
+    max-width: 520px;          /* stops them from getting huge on larger phones */
+    margin: 12px auto;         /* centers + adds spacing */
+    padding: 12px 14px;        /* smaller padding */
+    box-sizing: border-box;
 
-/* Each link card should be constrained and allow wrapping */
-.arlo-link {
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow: hidden; /* prevents tiny horizontal bleed */
-}
+    display: flex;
+    flex-direction: column;    /* KEY: stack icon above text on mobile */
+    align-items: center;
+    text-align: center;
 
-/* If the card is flex (icon + text), allow wrapping/shrinking */
-.arlo-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;    /* key: lets text drop under icon if needed */
-}
+    overflow: hidden;
+  }
 
-/* Text/anchors inside must be allowed to shrink */
-.arlo-link a,
-.arlo-link p,
-.arlo-link span,
-.arlo-link div {
-  min-width: 0;              /* key for flex overflow bugs */
-  overflow-wrap: anywhere;   /* breaks long strings/URLs */
-  word-break: break-word;    /* fallback */
-}
+  /* shrink logos/icons so they don't dominate */
+  .arlo-link img {
+    width: 56px;               /* adjust 48–64 to taste */
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 8px;
+  }
 
-/* Images/icons shouldn't force layout wider */
-.arlo-link img {
-  max-width: 100%;
-  height: auto;
+  /* fix the “long line” problem + make text prettier */
+  .arlo-link a,
+  .arlo-link p,
+  .arlo-link span,
+  .arlo-link div {
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+
+    font-size: 1rem;           /* adjust down if needed (0.95rem) */
+    line-height: 1.25;         /* tighter vertical rhythm */
+  }
+
+  /* optional: if headings are giant, tame them */
+  .arlo-link h1,
+  .arlo-link h2,
+  .arlo-link h3 {
+    font-size: 1.05rem;
+    line-height: 1.2;
+    margin: 0;
+  }
 }
     #nav-list {
         position: absolute;

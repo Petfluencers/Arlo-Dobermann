@@ -50,13 +50,8 @@ body.loaded {
 .background-container {
     width: 100vw;
     height: 100vh;
-    background: var(--color-dark) url(../images/arlo-dobermann-cover.webp) no-repeat center center;
+    background: var(--color-dark) no-repeat center center;
     background-size: cover;
-    background-position: 0px 0px;
-    padding-bottom: 5vh;
-    overflow: hidden;
-    
-    
 }
 
 h1 {
@@ -69,9 +64,9 @@ h1 {
 .heading-1 {
     
     display:block;
-    justify-content: right;
-    align-items: right;
-    text-align: right;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     margin-right: 5vw;
     font-size: 3.5rem;
     white-space: nowrap;
@@ -608,3 +603,14 @@ p.diary-text {
     text-decoration: none;
     cursor: pointer;
   }
+/* Disable typewriter animation on the homepage H1 */
+body.home h1,
+body.home .hero h1,
+body.home .typewriter,
+body.home .typing {
+  animation: none !important;
+  border-right: none !important; /* removes the cursor if it’s faked via border */
+  width: auto !important;        /* undo width tricks used for typing effect */
+  white-space: normal !important;
+  overflow: visible !important;
+}

@@ -29,9 +29,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body class="home">
 
-    <div class="background-container">
+    <div class="background-container" id="hero-bg">
         <div class="nav-container">
           <a href="index.html" aria-label="home page"><img class="nav-logo" src="images/arlo-logo.png" alt="Arlo Dobermann's logo"></a>
           <div class="hamburger"><img id="hamburger" src="./images/icons8-hamburger-menu-48.png" alt="hamburger icon">
@@ -48,7 +48,7 @@
          <div class="hero-section">
             <h1 class="heading-1">Arlo Dobermann: The Page</h1>
             <div class="cta-container">
-            <a href="arlo-story.html" class="cta-link" aria-label="Arlo's Story">Learn More About Arlo here!</a>
+            <a href="arlo-story.html" class="cta-link" aria-label="Arlo's Story">Meet Arlo</a>
             </div>
         </div>
     </div>
@@ -65,6 +65,28 @@
     </footer>
     <script src="js/dropdown.js"></script>
     
-  <script src="js/body-fade-in.js"></script>
+    <script src="js/body-fade-in.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const heroImages = [
+          "/assets/images/hero/arlo-dobermann-cover.webp",
+          "/assets/images/hero/Arlo-puppy-1.webp",
+          "/assets/images/hero/Arlo-puppy-2.webp",
+          "/assets/images/hero/Arlo-puppy-3.webp",
+          "/assets/images/hero/big-arlo-1.webp",
+          "/assets/images/hero/big-arlo-2.webp",
+          "/assets/images/hero/big-arlo-3.webp",
+          "/assets/images/hero/big-arlo-4.webp",
+          "/assets/images/hero/sleepy-arlo-main-link.webp"
+        ];
+
+        const randomImage = heroImages[Math.floor(Math.random() * heroImages.length)];
+        const hero = document.getElementById("hero-bg");
+
+        if (hero) {
+          hero.style.backgroundImage = `url(${randomImage})`;
+        }
+      });
+    </script>
   </body>
 </html>
