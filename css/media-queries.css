@@ -6,6 +6,7 @@
     h1 {
         font-size: 2rem;
         text-align: center;
+        z-index: 10;
     }
     
     .heading-1 {
@@ -14,6 +15,7 @@
         font-size: 1.8rem;
         line-height: 1.2;
         text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        z-index: 10;
     }
 
     figcaption {
@@ -43,14 +45,48 @@
     }
 
     .background-container {
-        width: 100vw;
-        height: 100vh;
-        background: #333 no-repeat center center;
-        background-size: 200%;
-        background-position: calc(50% - 20px) 30%;
-        background-attachment: fixed;
-       
-    }
+  width: 100vw;
+  height: 100vh;
+
+  /* your existing background setup */
+  background: #333 no-repeat center center;
+  background-size: 200%;
+  background-position: calc(50% - 20px) 30%;
+  background-attachment: fixed;
+
+  /* IMPORTANT: keep hero from swallowing clicks above it */
+  position: relative;
+  overflow: hidden;
+}
+
+/* If you have (or want) a dark overlay, do it like this */
+.background-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);  /* tweak 0.20–0.40 */
+  pointer-events: none;            /* KEY: overlay can’t block hamburger clicks */
+  z-index: 0;
+}
+
+/* Make sure hero content sits above overlay */
+.background-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Make SURE the nav + hamburger are above the hero */
+nav,
+.navbar,
+.nav-container,
+header,
+.hamburger,
+.menu-toggle,
+#hamburger,
+#menu-button {
+  position: relative;
+  z-index: 9999;
+}
     .hero-section {
         display: flex;
         flex-direction: column;
@@ -76,27 +112,29 @@
             left: 0;
             width: 100%;
             background-color: #333;
-            z-index: 1000;
+            z-index: 9999;
             padding-bottom: 10px;
         }
     
         #nav-list.active {
             display: flex;
             margin-bottom: 10px;
+            z-index: 9999;
         }
     
         .nav-link li {
             text-align: center;
             padding: 1rem 0;
             border: 1px solid #fff;
-            color: #fff
+            color: #fff;
+            z-index: 9999;
         }
 
         .nav-link a {
             width: 80%;
             text-align: center;
             color: #fff;
-            
+            z-index: 9999;
             
         }
     
@@ -106,13 +144,13 @@
             left: 90vh;
             background-color: #444;
             display: none;
-            z-index: 1000;
+            z-index: 9999;
             margin-bottom: 10px;
         }
     
         .dropdown.active .dropdown-menu {
             display: block;
-            z-index: 1000;
+            z-index: 9999;
         }
 
        
