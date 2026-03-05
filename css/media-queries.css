@@ -63,21 +63,25 @@
             width: 100%;
             background-color: #333;
             z-index: 1000;
+            padding-bottom: 10px;
         }
     
         #nav-list.active {
             display: flex;
+            margin-bottom: 10px;
         }
     
         .nav-link li {
             text-align: center;
             padding: 1rem 0;
             border: 1px solid #fff;
+            color: #fff
         }
 
         .nav-link a {
             width: 80%;
             text-align: center;
+            color: #fff;
             
             
         }
@@ -89,11 +93,50 @@
             background-color: #444;
             display: none;
             z-index: 1000;
+            margin-bottom: 10px;
         }
     
         .dropdown.active .dropdown-menu {
             display: block;
             z-index: 1000;
+        }
+
+        /* --- Arlo Links Page: Mobile overflow + wrapping fix --- */
+
+        /* Make sure the overall list can't exceed the viewport */
+        .arlo-list {
+        max-width: 100%;
+        }
+
+        /* Each link card should be constrained and allow wrapping */
+        .arlo-link {
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden; /* prevents tiny horizontal bleed */
+        }
+
+        /* If the card is flex (icon + text), allow wrapping/shrinking */
+        .arlo-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;    /* key: lets text drop under icon if needed */
+        }
+
+        /* Text/anchors inside must be allowed to shrink */
+        .arlo-link a,
+        .arlo-link p,
+        .arlo-link span,
+        .arlo-link div {
+        min-width: 0;              /* key for flex overflow bugs */
+        overflow-wrap: anywhere;   /* breaks long strings/URLs */
+        word-break: break-word;    /* fallback */
+        }
+
+        /* Images/icons shouldn't force layout wider */
+        .arlo-link img {
+        max-width: 100%;
+        height: auto;
         }
 
     .cta-container {
@@ -247,11 +290,13 @@
         text-align: center;
         padding: 1rem 0;
         border: 1px solid #fff;
+        color: #fff;
     }
 
     .nav-link a {
         width: 80%;
         text-align: center;
+        color: #fff;
         
         
     }
@@ -263,6 +308,44 @@
     .hamburger {
         cursor: pointer;
     }
+
+    /* --- Arlo Links Page: Mobile overflow + wrapping fix --- */
+
+/* Make sure the overall list can't exceed the viewport */
+.arlo-list {
+  max-width: 100%;
+}
+
+/* Each link card should be constrained and allow wrapping */
+.arlo-link {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* prevents tiny horizontal bleed */
+}
+
+/* If the card is flex (icon + text), allow wrapping/shrinking */
+.arlo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;    /* key: lets text drop under icon if needed */
+}
+
+/* Text/anchors inside must be allowed to shrink */
+.arlo-link a,
+.arlo-link p,
+.arlo-link span,
+.arlo-link div {
+  min-width: 0;              /* key for flex overflow bugs */
+  overflow-wrap: anywhere;   /* breaks long strings/URLs */
+  word-break: break-word;    /* fallback */
+}
+
+/* Images/icons shouldn't force layout wider */
+.arlo-link img {
+  max-width: 100%;
+  height: auto;
+}
     #nav-list {
         position: absolute;
         top: -100%; /* Start off-screen */
