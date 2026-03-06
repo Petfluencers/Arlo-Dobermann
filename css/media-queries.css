@@ -3,7 +3,10 @@
     max-width: 100%;
     overflow-x: hidden;
   }
-
+ .mobile-body {
+    display: block;
+    margin-top: 150px;
+  }
   h1 {
     font-size: 2rem;
     text-align: center;
@@ -27,6 +30,22 @@
   .heading-2, .heading-3 {
     font-size: 2rem;
   }
+
+  .heading-3 {
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+div.story-image-div {
+        display: flex;
+        max-width: 100% !important;
+        width: 90%;
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+        }
 
   .heading-5 {
     z-index: 0;
@@ -156,6 +175,13 @@ h1, h2, h3 {
             /* Show on mobile screens */
         }
 
+        .heading-3 {
+          text-align: center;
+          max-width: 90%;
+          margin: 0 auto;
+          line-height: 1.2;
+          text-wrap: balance;
+        }
     .nav-container{
     position: fixed;
     top: 0;
