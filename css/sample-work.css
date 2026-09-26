@@ -246,8 +246,7 @@ img#hamburger{
    never exists. The missing comma meant both rules were dead and the
    widgets rendered full-bleed and unstyled. */
 .etsy-widget iframe,
-.diary-widget iframe,
-.insta-widget iframe {
+.diary-widget iframe {
     width: 100%;
     border: none;
     border-radius: 12px;
