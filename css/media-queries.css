@@ -27,10 +27,6 @@
     margin-top: 8px;
   }
 
-  .heading-2, .heading-3 {
-    font-size: 2rem;
-  }
-
   .heading-3 {
   text-align: center;
   max-width: 90%;
@@ -120,16 +116,7 @@ div.story-image-div {
 
 /* --- everything below this line is your existing file content --- */
 
-
     @media (hover: hover) {
-        li.arlo-link:hover {
-            transform: scale(1.05);
-        }
-    
-        .arlo-link a:hover {
-            transform: scale(1.1);
-            background-color: rgba(234, 126, 126, 0.25);
-        }
 
         .gallery-item img:hover {
             transform: scale(1.05);
@@ -160,10 +147,6 @@ h1, h2, h3 {
         flex-direction: column !important;
         justify-content: center;
         align-items: center;
-        }
-    .arlo-link a:active {
-        transform: scale(1.05); /* Slight effect on tap */
-        background-color: rgba(234, 126, 126, 0.35); /* Darker for visual feedback */
         }
 
     /* Hamburger Menu */
@@ -225,60 +208,6 @@ h1, h2, h3 {
 
     .background-container::before { pointer-events: none; }
 
-    @media (max-width: 768px) {
-  /* give the whole list breathing room */
-  .arlo-list {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  /* make each card feel like a card, not a billboard */
-  .arlo-link {
-    width: 100%;
-    max-width: 520px;          /* stops them from getting huge on larger phones */
-    margin: 12px auto;         /* centers + adds spacing */
-    padding: 12px 14px;        /* smaller padding */
-    box-sizing: border-box;
-
-    display: flex;
-    flex-direction: column;    /* KEY: stack icon above text on mobile */
-    align-items: center;
-    text-align: center;
-
-    overflow: hidden;
-  }
-
-  /* shrink logos/icons so they don't dominate */
-  .arlo-link img {
-    width: 56px;               /* adjust 48–64 to taste */
-    height: auto;
-    max-width: 100%;
-    margin-bottom: 8px;
-  }
-
-  /* fix the “long line” problem + make text prettier */
-  .arlo-link a,
-  .arlo-link p,
-  .arlo-link span,
-  .arlo-link div {
-    max-width: 100%;
-    min-width: 0;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-
-    font-size: 1rem;           /* adjust down if needed (0.95rem) */
-    line-height: 1.25;         /* tighter vertical rhythm */
-  }
-
-  /* optional: if headings are giant, tame them */
-  .arlo-link h1,
-  .arlo-link h2,
-  .arlo-link h3 {
-    font-size: 1.05rem;
-    line-height: 1.2;
-    margin: 0;
-  }
-}
     #nav-list {
         position: absolute;
         top: -100%; /* Start off-screen */
