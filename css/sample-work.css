@@ -241,16 +241,67 @@ img#hamburger{
     margin: 0 auto 35px auto;
     text-align: center;
 }
-.etsy-widget .diary-widget iframe {
+/* NOTE: these were written as ".etsy-widget .diary-widget" — a descendant
+   selector matching a .diary-widget nested inside an .etsy-widget, which
+   never exists. The missing comma meant both rules were dead and the
+   widgets rendered full-bleed and unstyled. */
+.etsy-widget iframe,
+.diary-widget iframe,
+.insta-widget iframe {
     width: 100%;
     border: none;
     border-radius: 12px;
 }
-.etsy-widget .diary-widget {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
+
+.etsy-widget,
+.diary-widget,
+.insta-widget {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
+
+/* Instagram strip sits below the curated gallery */
+.insta-widget {
+    border-top: 2px solid var(--color-section);
+    padding-top: 28px;
+}
+
+.insta-widget .insta-note {
+    text-align: center;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin: 0 0 24px;
+}
+
+.insta-widget .insta-note a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.insta-widget .insta-note a:hover,
+.insta-widget .insta-note a:focus-visible {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+}
+
+/* The feed iframe can't self-size, so height is driven by aspect-ratio.
+   SociableKit renders square tiles sized from column width, so total
+   height tracks width: ~1.09x at 3 columns, ~7.65x at 1 column.
+   Measured at 1100px (1150 tall, 3 cols) and 390px (2984 tall, 1 col). */
+.insta-widget iframe {
+    width: 100%;
+    aspect-ratio: 1 / 1.09;
+    border: none;
+    border-radius: 12px;
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .insta-widget iframe { aspect-ratio: 1 / 7.65; }
+}
+
 
 .treat-fund-note {
   font-size: 0.9rem;
