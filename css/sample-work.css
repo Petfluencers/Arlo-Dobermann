@@ -292,6 +292,9 @@ img#hamburger{
    Measured at 1100px (1150 tall, 3 cols) and 390px (2984 tall, 1 col). */
 .insta-widget iframe {
     width: 100%;
+    /* height:auto is required — the UA stylesheet's default height:150px
+       otherwise wins and aspect-ratio is ignored on replaced elements. */
+    height: auto;
     aspect-ratio: 1 / 1.09;
     border: none;
     border-radius: 12px;
