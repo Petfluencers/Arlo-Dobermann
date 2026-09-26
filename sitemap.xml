@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
- xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
- http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator https://sitemap-generator.org/ -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-   <loc>https://petfluencers.github.io/Arlo-Dobermann/</loc>
-   <lastmod>2025-02-24T19:39:48.252Z</lastmod>
-   <priority>1.00</priority>
- </url>
+    <loc>https://www.arlodobermann.com/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://www.arlodobermann.com/arlo-story</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.arlodobermann.com/doberman-diaries</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.arlodobermann.com/photo-gallery</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.arlodobermann.com/arlo-store</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.arlodobermann.com/arlo-link</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.60</priority>
+  </url>
 </urlset>
