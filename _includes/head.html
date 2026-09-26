@@ -11,6 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 {%- assign page_url = page.url | replace: 'index.html', '' | replace: '.html', '' | absolute_url %}
 {%- assign share_image = site.image | absolute_url %}
+{%- if page.noindex %}
+    <meta name="robots" content="noindex, nofollow" />
+{%- endif %}
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description }}" />
 
