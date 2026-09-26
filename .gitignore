@@ -1,0 +1,12 @@
+# Jekyll build output and caches — GitHub Pages builds from source
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Local bundle state; GitHub Pages uses its own environment
+Gemfile.lock
+vendor/
+.bundle/
+
+.DS_Store

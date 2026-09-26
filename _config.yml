@@ -1,0 +1,29 @@
+# Hand-written HTML with our own layouts — no theme, and force UTF-8 so
+# Jekyll doesn't fall back to US-ASCII and choke on typographic characters.
+encoding: utf-8
+theme:
+
+title: Arlo Dobermann
+url: https://www.arlodobermann.com
+locale: en_CA
+image: /images/arlo-logo.png
+image_alt: Arlo, a black and tan Doberman, in the Arlo Dobermann logo
+ga_measurement_id: G-K50B248B15
+
+social:
+  facebook: https://www.facebook.com/profile.php?id=61553715508190
+  instagram: https://www.instagram.com/arlo.dobermann
+
+nav:
+  - { title: "Arlo's Story",     url: /arlo-story.html,       label: "Arlo's Story" }
+  - { title: "Photo Gallery",    url: /photo-gallery.html,    label: "Photo Gallery" }
+  - { title: "Arlo's Links!",    url: /arlo-link.html,        label: "Arlo's Links" }
+  - { title: "Arlo's Store",     url: /arlo-store.html,       label: "Arlo's Store" }
+  - { title: "Doberman Diaries", url: /doberman-diaries.html, label: "Doberman Diaries" }
+
+# Jekyll shouldn't try to process these
+exclude:
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - README.md

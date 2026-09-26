@@ -1,0 +1,47 @@
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_measurement_id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.ga_measurement_id }}');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+{%- assign page_url = page.url | replace: 'index.html', '' | replace: '.html', '' | absolute_url %}
+{%- assign share_image = site.image | absolute_url %}
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}" />
+
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:type" content="{{ page.og_type | default: 'website' }}" />
+    <meta property="og:url" content="{{ page_url }}" />
+    <meta property="og:title" content="{{ page.og_title | default: page.title }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+    <meta property="og:image" content="{{ share_image }}" />
+    <meta property="og:image:width" content="720" />
+    <meta property="og:image:height" content="720" />
+    <meta property="og:image:alt" content="{{ site.image_alt }}" />
+    <meta property="og:locale" content="{{ site.locale }}" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ page.og_title | default: page.title }}" />
+    <meta name="twitter:description" content="{{ page.description }}" />
+    <meta name="twitter:image" content="{{ share_image }}" />
+    <meta name="twitter:image:alt" content="{{ site.image_alt }}" />
+
+{%- comment %} ?v= is the build time, so a deploy busts the browser cache {% endcomment %}
+    <link rel="stylesheet" href="{{ '/css/sample-work.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    <link rel="stylesheet" href="{{ '/css/media-queries.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    <link rel="stylesheet" href="{{ '/css/fonts.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+{%- for extra in page.extra_css %}
+    <link rel="stylesheet" href="{{ extra | relative_url }}?v={{ site.time | date: '%s' }}">
+{%- endfor %}
+    <link rel="canonical" href="{{ page_url }}" />
+    <link rel="icon" href="{{ '/images/dog.ico' | relative_url }}" class="favicon" type="image/x-icon">
+    <!--made using https://www.flaticon.com/free-icons/doberman title="Doberman icons" Doberman icons created by Maxim Kulikov - Flaticon-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
