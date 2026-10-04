@@ -12,7 +12,7 @@
 {%- assign page_url = page.url | replace: 'index.html', '' | replace: '.html', '' | absolute_url %}
 {%- assign share_image = site.image | absolute_url %}
 {%- if page.noindex %}
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content="noindex, follow" />
 {%- endif %}
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description }}" />
@@ -34,6 +34,43 @@
     <meta name="twitter:image" content="{{ share_image }}" />
     <meta name="twitter:image:alt" content="{{ site.image_alt }}" />
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "{{ '/' | absolute_url }}#website",
+          "url": "{{ '/' | absolute_url }}",
+          "name": {{ site.title | jsonify }},
+          "inLanguage": "en-CA",
+          "about": { "@id": "{{ '/' | absolute_url }}#arlo" }
+        },
+        {
+          "@type": "Thing",
+          "@id": "{{ '/' | absolute_url }}#arlo",
+          "name": "Arlo Dobermann",
+          "description": "Arlo is a Doberman in Alberta, Canada.",
+          "image": "{{ site.image | absolute_url }}",
+          "sameAs": [
+            {{ site.social.facebook | jsonify }},
+            {{ site.social.instagram | jsonify }}
+          ]
+        },
+        {
+          "@type": {{ page.schema_type | default: 'WebPage' | jsonify }},
+          "@id": "{{ page_url }}#webpage",
+          "url": "{{ page_url }}",
+          "name": {{ page.title | jsonify }},
+          "description": {{ page.description | jsonify }},
+          "inLanguage": "en-CA",
+          "isPartOf": { "@id": "{{ '/' | absolute_url }}#website" },
+          "about": { "@id": "{{ '/' | absolute_url }}#arlo" }
+        }
+      ]
+    }
+    </script>
+
 {%- comment %} ?v= is the build time, so a deploy busts the browser cache {% endcomment %}
     <link rel="stylesheet" href="{{ '/css/sample-work.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     <link rel="stylesheet" href="{{ '/css/media-queries.css' | relative_url }}?v={{ site.time | date: '%s' }}">
@@ -44,7 +81,3 @@
     <link rel="canonical" href="{{ page_url }}" />
     <link rel="icon" href="{{ '/images/dog.ico' | relative_url }}" class="favicon" type="image/x-icon">
     <!--made using https://www.flaticon.com/free-icons/doberman title="Doberman icons" Doberman icons created by Maxim Kulikov - Flaticon-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">

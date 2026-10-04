@@ -1,10 +1,13 @@
-        <div class="nav-container">
-          <a href="{{ '/' | relative_url }}" aria-label="home page"><img class="nav-logo" src="{{ '/images/arlo-logo.png' | relative_url }}" alt="Arlo Dobermann's logo"></a>
-          <div class="hamburger"><img id="hamburger" src="{{ '/images/icons8-hamburger-menu-48.png' | relative_url }}" alt="hamburger icon">
+        <nav class="nav-container" aria-label="Primary navigation">
+          <a href="{{ '/' | relative_url }}" aria-label="Arlo Dobermann home"><img class="nav-logo" src="{{ '/images/arlo-logo.webp' | relative_url }}" width="50" height="50" alt="Arlo Dobermann's logo"></a>
+          <div class="hamburger">
+            <button class="menu-toggle" id="hamburger" type="button" aria-label="Open navigation menu" aria-controls="nav-list" aria-expanded="false">
+              <img src="{{ '/images/icons8-hamburger-menu-48.png' | relative_url }}" width="48" height="48" alt="">
+            </button>
             <ul class="nav-list" id="nav-list">
 {%- for item in site.nav %}
                 <li class="nav-link"><a href="{{ item.url | relative_url }}" aria-label="{{ item.label }}">{{ item.title }}</a></li>
 {%- endfor %}
             </ul>
           </div>
-        </div>
+        </nav>

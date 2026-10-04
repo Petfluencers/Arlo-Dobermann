@@ -5,6 +5,7 @@
   --color-heading: #000000;
   --color-accent: #ff4b3a;
   --color-accent-hover: #e33d2e;
+  --color-accent-light: #ff8a7e;
   --color-tan: #d98443;
   --color-dark: #22332f;
 }
@@ -35,6 +36,22 @@ body {
 
 body.loaded {
     opacity: 1;
+}
+
+.skip-link {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 20000;
+    padding: 10px 14px;
+    color: #fff;
+    background: var(--color-dark);
+    border-radius: 4px;
+    transform: translateY(-150%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
 }
 
 .nav-logo {
@@ -164,6 +181,7 @@ h1 {
 
 /* Navbar styling */
 .nav-container {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -173,15 +191,16 @@ h1 {
 }
 
 /* Hamburger icon */
-img#hamburger{
+.menu-toggle {
     display: none;
-    font-size: 2rem;
-    color: var(--color-text);
+    padding: 0;
+    border: 0;
+    background: transparent;
     cursor: pointer;
-    position: absolute;
-    top: 2vh;
-    right: 5vw;
-    transform: translateY(-50%);
+}
+
+.menu-toggle img {
+    display: block;
 }
 
 /* Navigation links */
@@ -197,10 +216,37 @@ img#hamburger{
 
 .nav-link a {
     font-family: 'Oswald';
-    color: var(--color-bg);
+    color: var(--color-dark);
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 200;
+}
+
+.nav-link a:hover,
+.nav-link a:focus-visible {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+.hero-intro {
+    box-sizing: border-box;
+    max-width: 720px;
+    margin: 1rem auto 0;
+    padding: 0 20px;
+    color: #fff;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    line-height: 1.55;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-intro a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
 }
 
 .cta-container {
@@ -208,6 +254,10 @@ img#hamburger{
     justify-content: center;
     margin-right: 9vw;
     margin-top: 2vh;
+}
+
+.home .cta-container {
+    margin-right: 0;
 }
 
 /*@keyframes pulse {
@@ -329,6 +379,11 @@ img#hamburger{
     transform: scale(1.05);
 }
 
+.gallery-item img:focus-visible {
+    outline: 4px solid var(--color-accent-hover);
+    outline-offset: -4px;
+}
+
 .hero-image {
     display: flex;
     justify-content: center;
@@ -349,6 +404,29 @@ img#hamburger{
     font-family: 'Oswald', serif;
     font-weight: 200;
     font-size: 1.5rem;
+}
+
+.affiliate-disclosure,
+.gallery-intro {
+    max-width: 760px;
+    margin: 1rem auto;
+    padding: 0 20px;
+    color: var(--color-text);
+    font-family: 'Oswald', Arial, sans-serif;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.affiliate-disclosure {
+    font-size: 0.95rem;
+}
+
+.gallery-intro a,
+.treat-fund-note a,
+.diary-text a {
+    color: var(--color-dark);
+    font-weight: 600;
+    text-underline-offset: 3px;
 }
 
 .social-footer {
@@ -428,14 +506,56 @@ p.story-text {
     width: 75vw;
     margin: 0 10vw 0 10vw;
     text-align: center;
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.story-reveal-ready p.story-text {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
 p.story-text.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.story-heading,
+.diary-summary h2 {
+    margin: 2.5rem auto 1rem;
+    padding: 0 20px;
+    color: var(--color-heading);
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-weight: 500;
+    text-align: center;
+}
+
+.related-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 2rem auto 3rem;
+    padding: 0 20px;
+}
+
+.related-links a {
+    padding: 10px 14px;
+    color: var(--color-dark);
+    background: #fff;
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.related-links a:hover,
+.related-links a:focus-visible {
+    border-color: var(--color-accent-hover);
+    text-decoration: underline;
 }
 
 div.story-image-div {
@@ -475,6 +595,23 @@ p.diary-text {
     width: 75vw;
     margin: 0 10vw 0 10vw;
     text-align: center;
+}
+
+.diary-summary {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.diary-highlights {
+    box-sizing: border-box;
+    max-width: 760px;
+    margin: 1rem auto 2rem;
+    padding: 0 40px;
+    color: var(--color-text);
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.6;
 }
 .gallery {
     display: grid;
@@ -531,8 +668,9 @@ p.diary-text {
 }
 
 .site-credit a {
-    color: var(--color-accent);
-    text-decoration: none;
+    color: var(--color-accent-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .site-credit a:hover {
@@ -556,7 +694,7 @@ p.diary-text {
     display: none;
     /* Hidden by default */
     position: fixed;
-    z-index: 1;
+    z-index: 15000;
     left: 0;
     top: 0;
     width: 100%;
@@ -581,11 +719,17 @@ p.diary-text {
     position: absolute;
     top: 20px;
     right: 35px;
-    color: var(--color-text);
+    color: #fff;
+    background: transparent;
+    border: 0;
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
     cursor: pointer;
+  }
+
+  body.modal-open {
+    overflow: hidden;
   }
   
   .close:hover,
