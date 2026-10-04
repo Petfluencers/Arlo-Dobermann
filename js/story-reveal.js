@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    document.documentElement.classList.add("story-reveal-ready");
+
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

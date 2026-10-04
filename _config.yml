@@ -15,10 +15,10 @@ social:
   instagram: https://www.instagram.com/arlo.dobermann
 
 nav:
-  - { title: "Arlo's Story",     url: /arlo-story.html,       label: "Arlo's Story" }
-  - { title: "Photo Gallery",    url: /photo-gallery.html,    label: "Photo Gallery" }
-  - { title: "Arlo's Links!",    url: /arlo-link.html,        label: "Arlo's Links" }
-  - { title: "Doberman Diaries", url: /doberman-diaries.html, label: "Doberman Diaries" }
+  - { title: "Arlo's Story",     url: /arlo-story,       label: "Arlo's Story" }
+  - { title: "Photo Gallery",    url: /photo-gallery,    label: "Photo Gallery" }
+  - { title: "Arlo's Links!",    url: /arlo-link,        label: "Arlo's Links" }
+  - { title: "Doberman Diaries", url: /doberman-diaries, label: "Doberman Diaries" }
 
 # Jekyll shouldn't try to process these
 exclude:

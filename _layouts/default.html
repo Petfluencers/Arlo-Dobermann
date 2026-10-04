@@ -1,16 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.locale | replace: '_', '-' }}">
   <head>
 {%- include head.html %}
   </head>
   <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 {%- if page.wrapper == 'hero' %}
     <div class="background-container" id="hero-bg">
+      <script>
+        // Pick the decorative hero as early as possible so the browser can
+        // discover it before the rest of the page has finished parsing.
+        (() => {
+          const heroImages = [
+{%- for img in site.static_files -%}
+{%- if img.path contains '/images/hero/' %}
+            "{{ img.path | relative_url }}",
+{%- endif -%}
+{%- endfor %}
+          ];
+          const hero = document.getElementById("hero-bg");
+          if (hero && heroImages.length) {
+            hero.style.backgroundImage =
+              `url(${heroImages[Math.floor(Math.random() * heroImages.length)]})`;
+          }
+        })();
+      </script>
 {%- elsif page.wrapper == 'alt' %}
     <div class="background-container-2">
 {%- endif %}
 {%- include nav.html %}
+    <main id="main-content">
 {{ content }}
+    </main>
 {%- if page.wrapper %}
     </div>
 {%- endif %}
@@ -20,25 +41,5 @@
 {%- for s in page.extra_js %}
     <script src="{{ s | relative_url }}"></script>
 {%- endfor %}
-{%- if page.wrapper == 'hero' %}
-    <script>
-      // A fresh random hero on every page load. The list is generated from
-      // whatever is in /images/hero/, so adding one is a file drop.
-      document.addEventListener("DOMContentLoaded", function () {
-        const heroImages = [
-{%- for img in site.static_files -%}
-{%- if img.path contains '/images/hero/' %}
-          "{{ img.path | relative_url }}",
-{%- endif -%}
-{%- endfor %}
-        ];
-        const hero = document.getElementById("hero-bg");
-        if (hero && heroImages.length) {
-          hero.style.backgroundImage =
-            `url(${heroImages[Math.floor(Math.random() * heroImages.length)]})`;
-        }
-      });
-    </script>
-{%- endif %}
   </body>
 </html>
