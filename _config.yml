@@ -26,3 +26,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - tests
+  - vendor

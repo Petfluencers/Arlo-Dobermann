@@ -5,6 +5,8 @@ description: "Arlo's adventures, misadventures and everyday antics, kept in the 
 og_title: "Doberman Diaries: Fun, Fur and Adventures!"
 og_type: website
 schema_type: CollectionPage
+extra_css: [/css/reels.css]
+extra_js: [/js/reels.js]
 ---
 
     
@@ -25,9 +27,25 @@ schema_type: CollectionPage
       <li>More updates from Arlo's Facebook and Instagram profiles linked on this site.</li>
     </ul>
     </section>
-    <div class="diary-widget">
-    <iframe src="https://widgets.sociablekit.com/instagram-reels/iframe/25659808" title="Arlo Dobermann Instagram reels" loading="lazy" width="100%" height="1000"></iframe>
-    </div>
+    <section class="diary-widget reels" aria-labelledby="reels-heading" data-reels>
+      <h2 id="reels-heading">Arlo's Instagram reels</h2>
+      <p>Read Arlo's post captions here, or open a reel on Instagram to watch. Instagram may ask you to sign in. Post captions are not video transcripts.</p>
+      <p class="reels-status" role="status" data-reels-status>Saved posts from {{ site.data.reels.saved_label | escape }}. <span>New posts load automatically when available.</span></p>
+      <ul class="reels-grid" data-reels-list>
+        {% for reel in site.data.reels.posts %}
+        <li class="reel-card">
+          <img src="{{ reel.image | escape }}" alt="" loading="lazy" width="480" height="480">
+          <div class="reel-copy">
+            <h3><a href="{{ reel.url | escape }}">Watch reel on Instagram<span class="reel-link-context">: {{ reel.caption | truncate: 100 | escape }}</span></a></h3>
+            <time datetime="{{ reel.date | slice: 0, 10 }}">{{ reel.date_label | escape }}</time>
+            <p class="reel-caption">{{ reel.caption | escape }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      <p><a href="https://www.instagram.com/arlo.dobermann/reels/">See all of Arlo's reels on Instagram</a></p>
+      <noscript><p>These saved posts are available without JavaScript. Visit Instagram for the newest reels.</p></noscript>
+    </section>
 
       <p class="diary-text">For More Doberman Diaries, please follow Arlo on Facebook at <a href="https://www.facebook.com/profile.php?id=61553715508190" target="_blank" rel="noopener">Arlo Dobermann</a> and Instagram at <a href="https://www.instagram.com/arlo.dobermann" target="_blank" rel="noopener">Arlo.Dobermann</a>!</p>
     </section>
