@@ -223,3 +223,22 @@ h1, h2, h3 {
     }
 #nav-list.active { top: 60px; } /* Slide in from the top */
 }
+
+/* Compact navigation remains readable and scrollable at short viewport heights. */
+@media screen and (max-width: 840px) {
+  #nav-list.active {
+    position: fixed;
+    top: 82px;
+    margin: 0;
+    max-height: calc(100dvh - 82px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-sizing: border-box;
+  }
+  #nav-list .nav-link a { color: #fff; }
+  #nav-list .nav-link a:hover, #nav-list .nav-link a:focus-visible { color: #fff; text-decoration: underline; }
+}
+@media screen and (max-width: 480px) {
+  .heading-1 { margin-top: 100px; }
+  .background-container { min-height: 100dvh; height: auto; }
+}

@@ -662,13 +662,13 @@ p.diary-text {
   .site-credit {
     margin-top: 16px;
     font-size: 0.8rem;
-    opacity: 0.85;
+    opacity: 1;
     text-align: center;
     margin-bottom: 10px;
 }
 
 .site-credit a {
-    color: var(--color-accent-light);
+    color: #a33228;
     text-decoration: underline;
     text-underline-offset: 3px;
 }
