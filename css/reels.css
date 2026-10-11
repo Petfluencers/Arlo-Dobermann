@@ -40,3 +40,5 @@
 }
 @media (max-width: 850px) { .reels-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 550px) { .reels-grid { grid-template-columns: minmax(0, 1fr); } }
+/* Keep saved captions compact while external thumbnails are not permitted. */
+.reel-card img[data-reel-src]:not([src]) { display: none; }
