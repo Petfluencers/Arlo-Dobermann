@@ -85,7 +85,7 @@
 
   async function init(doc, win) {
     const root = doc.querySelector('[data-reels]');
-    if (!root) return;
+    if (!root || (win.sitePrivacy && !win.sitePrivacy.allows('content'))) return;
     const list = root.querySelector('[data-reels-list]');
     const status = root.querySelector('[data-reels-status]');
     // Broken thumbnails must not remove the caption or destination.
@@ -101,9 +101,14 @@
       status.textContent = 'Showing previously saved posts. Checking for updates…';
     }
     const controller = new AbortController();
+    function stopIfDenied() {
+      if (win.sitePrivacy && !win.sitePrivacy.allows('content')) controller.abort();
+    }
+    doc.addEventListener('privacychange', stopIfDenied);
     const timer = win.setTimeout(() => controller.abort(), 8000);
     try {
       const posts = await loadFeed(win.fetch.bind(win), controller.signal);
+      if (controller.signal.aborted || (win.sitePrivacy && !win.sitePrivacy.allows('content'))) return;
       saveCache(storage, posts);
       // Never remove a link while someone is using it.
       if (root.contains(doc.activeElement)) {
@@ -113,15 +118,26 @@
         status.textContent = 'Showing the latest posts available from Arlo’s feed, including pinned reels.';
       }
     } catch (_) {
+      if (win.sitePrivacy && !win.sitePrivacy.allows('content')) return;
       status.textContent = 'Updates are temporarily unavailable. Showing saved posts; you can still open the reels on Instagram.';
     } finally {
       win.clearTimeout(timer);
+      doc.removeEventListener('privacychange', stopIfDenied);
     }
   }
 
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = { normalize, readCache, saveCache, loadFeed, render, init };
   } else {
-    init(document, window);
+    let started = false;
+    function startWithPermission() {
+      if (started || !document.querySelector('[data-reels]') || !window.sitePrivacy || !window.sitePrivacy.allows('content')) return;
+      started = true;
+      window.sitePrivacy.markActive('content');
+      document.querySelectorAll('[data-reel-src]').forEach(img => { img.src = img.dataset.reelSrc; });
+      init(document, window);
+    }
+    document.addEventListener('privacychange', startWithPermission);
+    startWithPermission();
   }
 }());

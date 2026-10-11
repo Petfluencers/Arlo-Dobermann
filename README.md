@@ -7,7 +7,7 @@ Jekyll site served by GitHub Pages. Build locally with `bundle install` and
 
 `doberman-diaries.html` renders twelve saved reels from `_data/reels.json`, so
 captions, dates and ordinary Instagram links are available before JavaScript runs.
-`js/reels.js` refreshes them once per page visit from the public SociableKIT feed:
+`js/reels.js` refreshes them once per page visit after External content is allowed from the public SociableKIT feed:
 `https://data.accentapi.com/feed/25659808.json`. This is the JSON Data link exposed
 by Arlo's existing widget, not a private credential. No subscription or account
 change is needed. Feed requests explicitly omit credentials.
@@ -26,7 +26,7 @@ from the public feed when maintaining the site: retain `code`, `link`,
 `image`, and `date`; keep the first twelve valid posts. `date_label` is the written
 date corresponding to the first ten characters of `date`; update `saved_at` and
 `saved_label` together. This fallback refresh is independent of automatic live
-updates. Remote thumbnails may expire; the captions and links remain useful.
+updates. Remote thumbnails load only after External content is allowed and may expire; the captions and links remain useful.
 
 The grid intentionally links to Instagram for playback. Post captions are not
 video transcripts. This change does not supply closed captions, audio
